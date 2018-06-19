@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 import FirebaseDatabase
 
 let dbReference = Database.database().reference()
@@ -17,11 +18,10 @@ class DataSevice {
     //Set variable for db references
     
     private(set) public var FirebaseReference = dbReference
-    private(set) public var FirebaseReference_Users = dbReference.child("Users")
+    private(set) public var FirebaseReference_Users = dbReference.child("users")
 
     //Add user to DB
-    func AddUsertoDB(userID: String, email: String, completed: @escaping (_ completed: Bool) -> ()) {
-        FirebaseReference_Users.updateChildValues(["email": email, "userID": userID])
-        completed(true)
+    func AddUsertoDB(userID: String, username: String, email: String) {
+        FirebaseReference_Users.childByAutoId().updateChildValues(["Username": username, "email": email, "userID": userID])
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class LoginController: UIViewController {
    
@@ -91,7 +92,7 @@ class LoginController: UIViewController {
             if error != nil {
                 print ("There has been an error")
             } else {
-                DataSevice.instance.FirebaseReference_Users.updateChildValues(["Username": name, "email": email])
+                DataSevice.instance.AddUsertoDB(userID: currentuserID, username: name, email: email)
             }
         }
         

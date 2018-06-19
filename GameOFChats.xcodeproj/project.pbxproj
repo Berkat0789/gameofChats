@@ -10,13 +10,13 @@
 		532CF77F999AEBF04932A7B5 /* Pods_GameOFChats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BAF7FF748D28A25602BFE /* Pods_GameOFChats.framework */; };
 		B4AE4AC020D8636D00084C64 /* Dataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AE4ABF20D8636D00084C64 /* Dataservice.swift */; };
 		B4BA72E220D868850016619F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BA72E120D868850016619F /* Constants.swift */; };
+		B4BA72E420D86F8C0016619F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4BA72E320D86F8C0016619F /* GoogleService-Info.plist */; };
 		B4C57FDB20D7386000FB90B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C57FDA20D7386000FB90B9 /* AppDelegate.swift */; };
 		B4C57FDD20D7386000FB90B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C57FDC20D7386000FB90B9 /* ViewController.swift */; };
 		B4C57FE020D7386000FB90B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C57FDE20D7386000FB90B9 /* Main.storyboard */; };
 		B4C57FE220D7386100FB90B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4C57FE120D7386100FB90B9 /* Assets.xcassets */; };
 		B4C57FE520D7386100FB90B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C57FE320D7386100FB90B9 /* LaunchScreen.storyboard */; };
 		B4C57FED20D73C2200FB90B9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C57FEC20D73C2200FB90B9 /* LoginController.swift */; };
-		B4D1594320D859DE00E18E9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D1594220D859DD00E18E9A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +24,7 @@
 		64DAB237DDD2B6F52A7BFBAF /* Pods-GameOFChats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOFChats.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameOFChats/Pods-GameOFChats.release.xcconfig"; sourceTree = "<group>"; };
 		B4AE4ABF20D8636D00084C64 /* Dataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataservice.swift; sourceTree = "<group>"; };
 		B4BA72E120D868850016619F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B4BA72E320D86F8C0016619F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4C57FD720D7386000FB90B9 /* GameOFChats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOFChats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C57FDA20D7386000FB90B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4C57FDC20D7386000FB90B9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,7 +33,6 @@
 		B4C57FE420D7386100FB90B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4C57FE620D7386100FB90B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4C57FEC20D73C2200FB90B9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		B4D1594220D859DD00E18E9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D00BAF7FF748D28A25602BFE /* Pods_GameOFChats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOFChats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,7 +101,7 @@
 				B4C57FDE20D7386000FB90B9 /* Main.storyboard */,
 				B4C57FE120D7386100FB90B9 /* Assets.xcassets */,
 				B4C57FE320D7386100FB90B9 /* LaunchScreen.storyboard */,
-				B4D1594220D859DD00E18E9A /* GoogleService-Info.plist */,
+				B4BA72E320D86F8C0016619F /* GoogleService-Info.plist */,
 				B4C57FE620D7386100FB90B9 /* Info.plist */,
 			);
 			path = GameOFChats;
@@ -177,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4C57FE520D7386100FB90B9 /* LaunchScreen.storyboard in Resources */,
-				B4D1594320D859DE00E18E9A /* GoogleService-Info.plist in Resources */,
+				B4BA72E420D86F8C0016619F /* GoogleService-Info.plist in Resources */,
 				B4C57FE220D7386100FB90B9 /* Assets.xcassets in Resources */,
 				B4C57FE020D7386000FB90B9 /* Main.storyboard in Resources */,
 			);
