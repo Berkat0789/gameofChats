@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Replaces what storyboard gives you..If not using storyboards
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = UINavigationController(rootViewController: MessageHomeVC())
         return true
     }
 

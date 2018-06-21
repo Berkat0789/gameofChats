@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>5460716024-8af7bih67n8rqv9d3pq4f2oh48pbhk07.apps.googleusercontent.com</string>
+	<string>223442959055-dg7clf0eet0bsdmr2tlfijqu0npfh5kf.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.5460716024-8af7bih67n8rqv9d3pq4f2oh48pbhk07</string>
+	<string>com.googleusercontent.apps.223442959055-dg7clf0eet0bsdmr2tlfijqu0npfh5kf</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBylcbGzpWDMsbGcBCegbKDs4tZ34y_9NA</string>
+	<string>AIzaSyD3UoBic6Kla-I5QCsGCg_WH8UHPMdZHxA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>5460716024</string>
+	<string>223442959055</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.gameofChats.GameOFChats</string>
 	<key>PROJECT_ID</key>
-	<string>gameofchats-b2515</string>
+	<string>gameofgroupchats</string>
 	<key>STORAGE_BUCKET</key>
-	<string>gameofchats-b2515.appspot.com</string>
+	<string>gameofgroupchats.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:5460716024:ios:10610bc58df78ee3</string>
+	<string>1:223442959055:ios:10610bc58df78ee3</string>
 	<key>DATABASE_URL</key>
-	<string>https://gameofchats-b2515.firebaseio.com</string>
+	<string>https://gameofgroupchats.firebaseio.com</string>
 </dict>
 </plist>
