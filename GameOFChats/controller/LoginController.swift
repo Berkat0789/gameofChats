@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginController: UIViewController {
+class LoginController: UIViewController{
    
     let inputCOntainerView: UIView = {
         let view = UIView()
@@ -58,13 +58,16 @@ class LoginController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    let profileImageView: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "Profileimage")
-        image.contentMode = .scaleAspectFill
-        image.clipsToBounds = true
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
+    lazy var profileImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "Profileimage")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFill
+        
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleImageTap)))
+        imageView.isUserInteractionEnabled = true
+        
+        return imageView
     }()
     let loginSegmanetedControl : UISegmentedControl = {
         let SC = UISegmentedControl(items: ["login", "Register"])
@@ -92,6 +95,7 @@ class LoginController: UIViewController {
     }
     
 //-----------------Selectors
+
     @objc func didSelectLoginToggle() {
         let title = loginSegmanetedControl.titleForSegment(at: loginSegmanetedControl.selectedSegmentIndex)
         loginRegister.setTitle(title, for: UIControlState.normal)
@@ -157,10 +161,26 @@ class LoginController: UIViewController {
                     print("Invalid login credentials")
                 }
             }else {
-                let userData = ["email": email, "Username": name, "Provider": (Auth.auth().currentUser?.providerID)!] as [String: Any]
-                DataService.instance.addUsertoDatabase(uid: currentuserID, userData: userData)
-                print("User Created")
-                self.dismiss(animated: true, completion: nil)
+                
+                
+                let ImageData = UIImageJPEGRepresentation(self.profileImageView.image!, 0.3)
+                DataService.instance.storage_Ref_Profile.putData(ImageData!, metadata: nil, completion: { (metadata, error) in
+                    if error != nil {
+                        print(error!)
+                    } else {
+                         DataService.instance.storage_Ref_Profile.downloadURL(completion: { (URL, error) in
+                            guard let ImageURL = URL else {return}
+                            let userData = ["userURL" : ImageURL, "email": email, "Username": name, "Provider": (Auth.auth().currentUser?.providerID)!] as [String: Any]
+                            DataService.instance.addUsertoDatabase(uid: currentuserID, userData: userData)
+                            print("User Created")
+                            self.dismiss(animated: true, completion: nil)
+                        })
+                        
+                        
+                    }
+                })
+                
+              
             }
         }
     }
@@ -251,7 +271,7 @@ class LoginController: UIViewController {
     }
     func setupProfileView() {
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.bottomAnchor.constraint(equalTo: loginSegmanetedControl.topAnchor, constant: -12).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: loginSegmanetedControl.topAnchor, constant: -40).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
 

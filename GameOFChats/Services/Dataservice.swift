@@ -12,6 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 let Firebase_DB_Reference = Database.database().reference()
+let firebase_Storage_Ref = Storage.storage().reference()
 
 class DataService {
     static let instance = DataService()
@@ -19,6 +20,11 @@ class DataService {
     
     private(set) public var Firebase_REference = Firebase_DB_Reference
     private(set) public var Firebase_REference_users = Firebase_DB_Reference.child("user")
+    
+//--Storage DB references
+    private(set) public var storage_Ref = firebase_Storage_Ref
+    private(set) public var storage_Ref_Profile = firebase_Storage_Ref.child("UserProfiles")
+
 
     //Add user to DB
     func addUsertoDatabase(uid: String, userData: Dictionary<String, Any>) {

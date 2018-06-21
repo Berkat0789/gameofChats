@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		532CF77F999AEBF04932A7B5 /* Pods_GameOFChats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D00BAF7FF748D28A25602BFE /* Pods_GameOFChats.framework */; };
+		B4937AF720DC1E4800C8BFED /* LoginController_EXTs.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4937AF620DC1E4800C8BFED /* LoginController_EXTs.swift */; };
 		B4AE4AC020D8636D00084C64 /* Dataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AE4ABF20D8636D00084C64 /* Dataservice.swift */; };
 		B4BA72E220D868850016619F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BA72E120D868850016619F /* Constants.swift */; };
 		B4BA72E620DADFEA0016619F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4BA72E520DADFE90016619F /* GoogleService-Info.plist */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		14F6AA964CF0A11635F29999 /* Pods-GameOFChats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOFChats.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GameOFChats/Pods-GameOFChats.debug.xcconfig"; sourceTree = "<group>"; };
 		64DAB237DDD2B6F52A7BFBAF /* Pods-GameOFChats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameOFChats.release.xcconfig"; path = "Pods/Target Support Files/Pods-GameOFChats/Pods-GameOFChats.release.xcconfig"; sourceTree = "<group>"; };
+		B4937AF620DC1E4800C8BFED /* LoginController_EXTs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController_EXTs.swift; sourceTree = "<group>"; };
 		B4AE4ABF20D8636D00084C64 /* Dataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dataservice.swift; sourceTree = "<group>"; };
 		B4BA72E120D868850016619F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B4BA72E520DADFE90016619F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B4937AF520DC1DF800C8BFED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B4937AF620DC1E4800C8BFED /* LoginController_EXTs.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B4AE4ABE20D8635700084C64 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 				B4AE4ABE20D8635700084C64 /* Services */,
 				B4BA72EB20DB3FA30016619F /* Model */,
 				B4937AF220DC194A00C8BFED /* View */,
+				B4937AF520DC1DF800C8BFED /* Extensions */,
 				B4C57FEE20D73C2E00FB90B9 /* controller */,
 				B4C57FDA20D7386000FB90B9 /* AppDelegate.swift */,
 				B4C57FDE20D7386000FB90B9 /* Main.storyboard */,
@@ -262,6 +273,7 @@
 				B4C57FED20D73C2200FB90B9 /* LoginController.swift in Sources */,
 				B4C57FDB20D7386000FB90B9 /* AppDelegate.swift in Sources */,
 				B4BA72EA20DB3D0D0016619F /* ComposeMessageController.swift in Sources */,
+				B4937AF720DC1E4800C8BFED /* LoginController_EXTs.swift in Sources */,
 				B4AE4AC020D8636D00084C64 /* Dataservice.swift in Sources */,
 				B4BA72ED20DB3FB20016619F /* User.swift in Sources */,
 			);
