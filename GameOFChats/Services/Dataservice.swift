@@ -13,8 +13,8 @@ import FirebaseDatabase
 
 let Firebase_DB_Reference = Database.database().reference()
 
-class DataSevice {
-    static let instance = DataSevice()
+class DataService {
+    static let instance = DataService()
     //Set variable for db references
     
     private(set) public var Firebase_REference = Firebase_DB_Reference
@@ -40,7 +40,7 @@ class DataSevice {
         }
     }
     
-//get user name fr current user
+//get user name for current user
     func getUsernameFOrCurrentUSer(uid: String, completed: @escaping (_ username: String) -> ()) {
         var currentUserName: String!
         Firebase_REference_users.child(uid).observeSingleEvent(of: DataEventType.value) { (userSnap) in

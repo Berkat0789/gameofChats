@@ -29,7 +29,7 @@ class MessageHomeVC: UITableViewController{
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         } else {
-            DataSevice.instance.getUsernameFOrCurrentUSer(uid: currentuserID) { (returnedUserName) in
+            DataService.instance.getUsernameFOrCurrentUSer(uid: currentuserID) { (returnedUserName) in
                 self.navigationItem.title = returnedUserName
             }
         }

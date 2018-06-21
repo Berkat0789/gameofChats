@@ -158,7 +158,7 @@ class LoginController: UIViewController {
                 }
             }else {
                 let userData = ["email": email, "Username": name, "Provider": (Auth.auth().currentUser?.providerID)!] as [String: Any]
-                DataSevice.instance.addUsertoDatabase(uid: currentuserID, userData: userData)
+                DataService.instance.addUsertoDatabase(uid: currentuserID, userData: userData)
                 print("User Created")
                 self.dismiss(animated: true, completion: nil)
             }
