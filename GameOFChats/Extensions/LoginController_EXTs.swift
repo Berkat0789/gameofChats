@@ -19,6 +19,7 @@ extension LoginController: UIImagePickerControllerDelegate, UINavigationControll
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         var selectedImage: UIImage?
+        ///make edited iage the priority over the original image
         if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
             selectedImage = editedImage
         } else {

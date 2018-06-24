@@ -161,22 +161,18 @@ class LoginController: UIViewController{
                     print("Invalid login credentials")
                 }
             }else {
-                
-                
+                //Reguster user with Image
                 let ImageData = UIImageJPEGRepresentation(self.profileImageView.image!, 0.3)
-                DataService.instance.storage_Ref_Profile.putData(ImageData!, metadata: nil, completion: { (metadata, error) in
+                let randomImageName = NSUUID().uuidString
+                DataService.instance.storage_Ref_Profile.child("\(randomImageName).png").putData(ImageData!, metadata: nil, completion: { (metadata, error) in
                     if error != nil {
                         print(error!)
-                    } else {
-                         DataService.instance.storage_Ref_Profile.downloadURL(completion: { (URL, error) in
-                            guard let ImageURL = URL else {return}
-                            let userData = ["userURL" : ImageURL, "email": email, "Username": name, "Provider": (Auth.auth().currentUser?.providerID)!] as [String: Any]
+                    } else {    
+                        guard let imageURL = metadata?.downloadURL()?.absoluteString else {return}
+                            let userData = ["userImageURL" : imageURL, "email": email, "Username": name, "Provider": (Auth.auth().currentUser?.providerID)!] as [String: Any]
                             DataService.instance.addUsertoDatabase(uid: currentuserID, userData: userData)
                             print("User Created")
                             self.dismiss(animated: true, completion: nil)
-                        })
-                        
-                        
                     }
                 })
                 

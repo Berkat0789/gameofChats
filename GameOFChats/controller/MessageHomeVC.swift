@@ -14,6 +14,7 @@ class MessageHomeVC: UITableViewController{
     
     //Variables and arrays
     var cellID = "UserCells"
+    var userName: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +30,13 @@ class MessageHomeVC: UITableViewController{
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         } else {
-            DataService.instance.getUsernameFOrCurrentUSer(uid: currentuserID) { (returnedUserName) in
-                self.navigationItem.title = returnedUserName
+            DataService.instance.Firebase_REference_users.observe(DataEventType.value) { (userSnap) in
+                DataService.instance.getUsernameFOrCurrentUSer(uid: currentuserID) { (returnedUserName) in
+                    self.userName = returnedUserName
+                    self.navigationItem.title = self.userName
+                }
             }
+         
         }
     }
     @objc func handleLogout() {

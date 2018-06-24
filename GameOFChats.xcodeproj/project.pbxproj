@@ -20,6 +20,7 @@
 		B4C57FE220D7386100FB90B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4C57FE120D7386100FB90B9 /* Assets.xcassets */; };
 		B4C57FE520D7386100FB90B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C57FE320D7386100FB90B9 /* LaunchScreen.storyboard */; };
 		B4C57FED20D73C2200FB90B9 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C57FEC20D73C2200FB90B9 /* LoginController.swift */; };
+		B4DA3D2820DF3E64001B678B /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA3D2720DF3E64001B678B /* ChatLogController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B4C57FE420D7386100FB90B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4C57FE620D7386100FB90B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4C57FEC20D73C2200FB90B9 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		B4DA3D2720DF3E64001B678B /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		D00BAF7FF748D28A25602BFE /* Pods_GameOFChats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameOFChats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 				B4C57FDC20D7386000FB90B9 /* MessageHomeVC.swift */,
 				B4C57FEC20D73C2200FB90B9 /* LoginController.swift */,
 				B4BA72E920DB3D0D0016619F /* ComposeMessageController.swift */,
+				B4DA3D2720DF3E64001B678B /* ChatLogController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-GameOFChats/Pods-GameOFChats-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -253,6 +257,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DA3D2820DF3E64001B678B /* ChatLogController.swift in Sources */,
 				B4BA72E220D868850016619F /* Constants.swift in Sources */,
 				B4C57FDD20D7386000FB90B9 /* MessageHomeVC.swift in Sources */,
 				B4C57FED20D73C2200FB90B9 /* LoginController.swift in Sources */,

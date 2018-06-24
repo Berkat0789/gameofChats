@@ -39,7 +39,8 @@ class DataService {
             for user in userSnap {
                 let userName = user.childSnapshot(forPath: "Username").value as! String
                 let email = user.childSnapshot(forPath: "email").value as! String
-                let users = User(name: userName, email: email)
+                let profileURL = user.childSnapshot(forPath: "userImageURL").value as! String
+                let users = User(name: userName, email: email, profileURL: profileURL)
                 allUsers.append(users)
             }
             completed(allUsers)
