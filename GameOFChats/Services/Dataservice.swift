@@ -48,13 +48,16 @@ class DataService {
     }
     
 //get user name for current user
-    func getUsernameFOrCurrentUSer(uid: String, completed: @escaping (_ username: String) -> ()) {
-        var currentUserName: String!
+    func getuserDatafor(uid: String, completed: @escaping (_ user: User) -> ()) {
+        var returnedUser: User!
         Firebase_REference_users.child(uid).observeSingleEvent(of: DataEventType.value) { (userSnap) in
             guard let dictionary = userSnap.value as? [String: Any] else {return}
             let username = dictionary["Username"] as! String
-            currentUserName = username
-            completed(currentUserName)
+            let email = dictionary["email"] as! String
+            let profileImageURL = dictionary["userImageURL"] as! String
+            let user = User(name: username, email: email, profileURL: profileImageURL)
+            returnedUser = user
+            completed(returnedUser)
 
             }
         }

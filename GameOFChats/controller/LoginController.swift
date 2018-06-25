@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class LoginController: UIViewController{
+    
+    var messageController = MessageHomeVC()
    
     let inputCOntainerView: UIView = {
         let view = UIView()
@@ -135,6 +137,7 @@ class LoginController: UIViewController{
                     print("invalid login credentials")
                 }
             } else {
+                self.messageController.fetchUserData()
                 self.dismiss(animated: true, completion: nil)
                 print("User LOgged iN")
                 
@@ -172,6 +175,7 @@ class LoginController: UIViewController{
                             let userData = ["userImageURL" : imageURL, "email": email, "Username": name, "Provider": (Auth.auth().currentUser?.providerID)!] as [String: Any]
                             DataService.instance.addUsertoDatabase(uid: currentuserID, userData: userData)
                             print("User Created")
+                            self.messageController.fetchUserData()
                             self.dismiss(animated: true, completion: nil)
                     }
                 })

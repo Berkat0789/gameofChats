@@ -9,12 +9,13 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import SDWebImage
 
 class MessageHomeVC: UITableViewController{
     
     //Variables and arrays
     var cellID = "UserCells"
-    var userName: String!
+    var loggedinUser: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +31,53 @@ class MessageHomeVC: UITableViewController{
         if Auth.auth().currentUser?.uid == nil {
             perform(#selector(handleLogout), with: nil, afterDelay: 0)
         } else {
-            DataService.instance.Firebase_REference_users.observe(DataEventType.value) { (userSnap) in
-                DataService.instance.getUsernameFOrCurrentUSer(uid: currentuserID) { (returnedUserName) in
-                    self.userName = returnedUserName
-                    self.navigationItem.title = self.userName
-                }
-            }
-         
+            fetchUserData()
         }
+    }
+    
+    func fetchUserData() {
+        DataService.instance.Firebase_REference_users.observe(DataEventType.value) { (userSnap) in
+            DataService.instance.getuserDatafor(uid: currentuserID, completed: { (returnedUser) in
+                self.loggedinUser = returnedUser
+                self.setupnavbarwith(user: self.loggedinUser!)
+            })
+        }
+    }
+    
+    func setupnavbarwith(user: User) {
+        let titleView = UIView()
+        titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        titleView.backgroundColor = #colorLiteral(red: 0.7741551995, green: 0.2030585706, blue: 0.204862982, alpha: 1)
+        
+
+//        let profileImageview = UIImageView()
+//        profileImageview.clipsToBounds = true
+//        profileImageview.contentMode = .scaleAspectFill
+//        profileImageview.layer.cornerRadius = 20
+//        profileImageview.translatesAutoresizingMaskIntoConstraints = false
+//        profileImageview.isUserInteractionEnabled = true
+//        profileImageview.sd_setImage(with: URL(string: (user.ProfileImgURl)!), placeholderImage: UIImage(named: ""), options: SDWebImageOptions.progressiveDownload, completed: nil)
+//        titleView.addSubview(profileImageview)
+//
+//
+//
+//        //ios 9 constraints
+//        //x,y,w,h
+//
+//        profileImageview.leftAnchor.constraint(equalTo: titleView.leftAnchor).isActive = true
+//        profileImageview.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
+//        profileImageview.widthAnchor.constraint(equalToConstant: 40).isActive = true
+//        profileImageview.heightAnchor.constraint(equalToConstant: 40).isActive = true
+
+        self.navigationItem.titleView = titleView
+        
+        //trigger segue to message thread
+        
+        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTitleViewPRessedtposhowChatView)))
+
+        
+        
+        
     }
     @objc func handleLogout() {
         do {
@@ -46,6 +86,7 @@ class MessageHomeVC: UITableViewController{
             print(error)
         }
         let logincontrollerVC = LoginController()
+        logincontrollerVC.messageController = self
         present(logincontrollerVC, animated: true, completion: nil)
     }
     
@@ -64,6 +105,10 @@ class MessageHomeVC: UITableViewController{
   
     
 //--Selectors
+    @objc func handleTitleViewPRessedtposhowChatView() {
+        let chatlogcontroller = ChatlogController()
+        navigationController?.pushViewController(chatlogcontroller, animated: true)
+    }
     
     @objc func handleNewMessagepressed() {
        let ComposeMessageVC = ComposeMessageController()
